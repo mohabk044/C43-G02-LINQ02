@@ -53,23 +53,44 @@ namespace Demo
             #endregion
 
             #region Video 3 - Casting Operators
-            List<Product> list = ProductList.Where(p => p.UnitsInStock == 0).ToList();
-            foreach (var item in list)
+            //List<Product> list = ProductList.Where(p => p.UnitsInStock == 0).ToList();
+            //foreach (var item in list)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Product[] products = ProductList.Where(p => p.UnitsInStock == 0).ToArray();
+            //foreach (var item in products)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Dictionary<long, Product> products2 = ProductList.Where(p => p.UnitsInStock == 0).ToDictionary(p => p.ProductID);
+            //foreach (var item in products2)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Dictionary<long, string?> products3 = ProductList.Where(p => p.UnitsInStock == 0).ToDictionary(p => p.ProductID, p => p.ProductName);
+            //foreach (var item in products3)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Video 4 - Generation Operators(Differed Execution)
+            //Range:
+            var result = Enumerable.Range(0, 100).Where(p => p % 2 == 0);
+            foreach (var item in result)
             {
                 Console.WriteLine(item);
             }
-            Product[] products = ProductList.Where(p => p.UnitsInStock == 0).ToArray();
-            foreach (var item in products)
+            //Repeat:
+            var result1 = Enumerable.Repeat(new Product() { Category = "Meat" }, 10);
+            foreach (var item in result1)
             {
                 Console.WriteLine(item);
             }
-            Dictionary<long, Product> products2 = ProductList.Where(p => p.UnitsInStock == 0).ToDictionary(p => p.ProductID);
-            foreach (var item in products2)
-            {
-                Console.WriteLine(item);
-            }
-            Dictionary<long, string?> products3 = ProductList.Where(p => p.UnitsInStock == 0).ToDictionary(p => p.ProductID, p => p.ProductName);
-            foreach (var item in products3)
+            //Empty:
+            var result2 = Enumerable.Empty<Product>();
+            foreach (var item in result2)
             {
                 Console.WriteLine(item);
             }
