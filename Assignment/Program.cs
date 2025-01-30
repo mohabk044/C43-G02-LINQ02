@@ -62,9 +62,16 @@ namespace Assignment
             //Console.WriteLine(Result);
             #endregion
             #region Q8. Get the average length of the words in dictionary_english.txt (Read dictionary_english.txt into Array of String First).
-            string[] Arr = File.ReadAllLines("dictionary_english.txt");
-            var Result = Arr.Average(P => P.Length);
-            Console.WriteLine(Result);
+            //string[] Arr = File.ReadAllLines("dictionary_english.txt");
+            //var Result = Arr.Average(P => P.Length);
+            //Console.WriteLine(Result);
+            #endregion
+            #region Q9. Get the total units in stock for each product category.
+            var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, TotalUnitsInStock = G.Sum(P => P.UnitsInStock) });
+            foreach (var item in Result)
+            {
+                Console.WriteLine(item);
+            }
             #endregion
             #endregion
         }
