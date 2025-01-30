@@ -76,25 +76,38 @@ namespace Demo
             #endregion
 
             #region Video 4 - Generation Operators(Differed Execution)
-            //Range:
-            var result = Enumerable.Range(0, 100).Where(p => p % 2 == 0);
+            //    //Range:
+            //    var result = Enumerable.Range(0, 100).Where(p => p % 2 == 0);
+            //    foreach (var item in result)
+            //    {
+            //        Console.WriteLine(item);
+            //    }
+            ////Repeat:
+            //    var result1 = Enumerable.Repeat(new Product() { Category = "Meat" }, 10);
+            //    foreach (var item in result1)
+            //    {
+            //        Console.WriteLine(item);
+            //    }
+            ////Empty:
+            //    var result2 = Enumerable.Empty<Product>();
+            //    foreach (var item in result2)
+            //    {
+            //        Console.WriteLine(item);
+            //    }
+            #endregion
+
+            #region Video 5 - Set Operators
+            var Seq01 = Enumerable.Range(0, 100);
+            var Seq02 = Enumerable.Range(50, 100);
+            var result = Seq01.Union(Seq02);
+            var result1 = Seq01.Concat(Seq02);
+            var result2 = Seq01.Intersect(Seq02);
+            var result3 = Seq01.Except(Seq02);
             foreach (var item in result)
             {
                 Console.WriteLine(item);
+                #endregion
             }
-            //Repeat:
-            var result1 = Enumerable.Repeat(new Product() { Category = "Meat" }, 10);
-            foreach (var item in result1)
-            {
-                Console.WriteLine(item);
-            }
-            //Empty:
-            var result2 = Enumerable.Empty<Product>();
-            foreach (var item in result2)
-            {
-                Console.WriteLine(item);
-            }
-            #endregion
         }
     }
 }
