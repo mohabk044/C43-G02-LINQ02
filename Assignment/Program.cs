@@ -119,7 +119,14 @@ namespace Assignment
 
             #region LINQ - Set Operators
             #region Q1. Find the unique Category names from Product List
-            var Result = ProductList.Select(P => P.Category).Distinct();
+            //var Result = ProductList.Select(P => P.Category).Distinct();
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q2. Produce a Sequence containing the unique first letter from both product and customer names.
+            var Result = ProductList.Select(P => P.ProductName[0]).Union(CustomerList.Select(C => C.CustomerName[0]));
             foreach (var item in Result)
             {
                 Console.WriteLine(item);
