@@ -37,19 +37,42 @@ namespace Demo
             #endregion
 
             #region Video 2 - Aggregate Operators
-            var result = ProductList.Count;
-            Console.WriteLine(result);
-            var result1 = ProductList.Sum(p => p.UnitPrice);
-            Console.WriteLine(result1);
-            var result2 = ProductList.Average(p => p.UnitPrice);
-            Console.WriteLine(result2);
-            var result3 = ProductList.Min(p => p.UnitPrice);
-            Console.WriteLine(result3);
-            var result4 = ProductList.MinBy(p => p.UnitPrice);
-            Console.WriteLine(result4);
-            string[] Names = { "Mostafa", "Mohamed", "Mohamed", "Habib" };
-            string FullName = Names.Aggregate((str01, str02) => $"{str01} {str02}");
-            Console.WriteLine(FullName);
+            //var result = ProductList.Count;
+            //Console.WriteLine(result);
+            //var result1 = ProductList.Sum(p => p.UnitPrice);
+            //Console.WriteLine(result1);
+            //var result2 = ProductList.Average(p => p.UnitPrice);
+            //Console.WriteLine(result2);
+            //var result3 = ProductList.Min(p => p.UnitPrice);
+            //Console.WriteLine(result3);
+            //var result4 = ProductList.MinBy(p => p.UnitPrice);
+            //Console.WriteLine(result4);
+            //string[] Names = { "Mostafa", "Mohamed", "Mohamed", "Habib" };
+            //string FullName = Names.Aggregate((str01, str02) => $"{str01} {str02}");
+            //Console.WriteLine(FullName);
+            #endregion
+
+            #region Video 3 - Casting Operators
+            List<Product> list = ProductList.Where(p => p.UnitsInStock == 0).ToList();
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+            Product[] products = ProductList.Where(p => p.UnitsInStock == 0).ToArray();
+            foreach (var item in products)
+            {
+                Console.WriteLine(item);
+            }
+            Dictionary<long, Product> products2 = ProductList.Where(p => p.UnitsInStock == 0).ToDictionary(p => p.ProductID);
+            foreach (var item in products2)
+            {
+                Console.WriteLine(item);
+            }
+            Dictionary<long, string?> products3 = ProductList.Where(p => p.UnitsInStock == 0).ToDictionary(p => p.ProductID, p => p.ProductName);
+            foreach (var item in products3)
+            {
+                Console.WriteLine(item);
+            }
             #endregion
         }
     }
