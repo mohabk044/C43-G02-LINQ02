@@ -102,7 +102,14 @@ namespace Assignment
             //}
             #endregion
             #region Q13. Get the products with the most expensive price in each category.
-            var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, MostExpensiveProduct = G.OrderByDescending(P => P.UnitPrice).First() });
+            //var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, MostExpensiveProduct = G.OrderByDescending(P => P.UnitPrice).First() });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q14. Get the average price of each category's products.
+            var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, AveragePrice = G.Average(P => P.UnitPrice) });
             foreach (var item in Result)
             {
                 Console.WriteLine(item);
