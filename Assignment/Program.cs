@@ -67,7 +67,14 @@ namespace Assignment
             //Console.WriteLine(Result);
             #endregion
             #region Q9. Get the total units in stock for each product category.
-            var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, TotalUnitsInStock = G.Sum(P => P.UnitsInStock) });
+            //var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, TotalUnitsInStock = G.Sum(P => P.UnitsInStock) });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q10. Get the cheapest price among each category's products
+            var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, CheapestPrice = G.Min(P => P.UnitPrice) });
             foreach (var item in Result)
             {
                 Console.WriteLine(item);
