@@ -133,8 +133,15 @@ namespace Assignment
             //}
             #endregion
             #region Q3. Create one sequence that contains the common first letter from both product and customer names.
-            var Result = ProductList.Select(P => P.ProductName[0]).Concat(CustomerList.Select(C => C.CustomerName[0]));
-            Result = Result.Distinct();
+            //var Result = ProductList.Select(P => P.ProductName[0]).Concat(CustomerList.Select(C => C.CustomerName[0]));
+            //Result = Result.Distinct();
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q4. Create one sequence that contains the first letters of product names that are not also first letters of customer names.
+            var Result = ProductList.Select(P => P.ProductName[0]).Except(CustomerList.Select(C => C.CustomerName[0]));
             foreach (var item in Result)
             {
                 Console.WriteLine(item);
