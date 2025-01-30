@@ -28,7 +28,14 @@ namespace Assignment
             //Console.WriteLine(Result);
             #endregion
             #region Q2. Return a list of customers and how many orders each has.
-            var Result = CustomerList.Select(C => new { C.CustomerID, OrderCount = C.Orders.Count() });
+            //var Result = CustomerList.Select(C => new { C.CustomerID, OrderCount = C.Orders.Count()});
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q3. Return a list of categories and how many products each has.
+            var Result = ProductList.Select(C => new { C.Category, ProductCount = C.ProductName.Count() });
             foreach (var item in Result)
             {
                 Console.WriteLine(item);
