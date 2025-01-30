@@ -23,9 +23,16 @@ namespace Assignment
 
             #region LINQ - Aggregate Operators
             #region Q1. Uses Count to get the number of odd numbers in the array
-            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var Result = Arr.Count(P => P % 2 != 0);
-            Console.WriteLine(Result);
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var Result = Arr.Count(P => P % 2 != 0);
+            //Console.WriteLine(Result);
+            #endregion
+            #region Q2. Return a list of customers and how many orders each has.
+            var Result = CustomerList.Select(C => new { C.CustomerID, OrderCount = C.Orders.Count() });
+            foreach (var item in Result)
+            {
+                Console.WriteLine(item);
+            }
             #endregion
             #endregion
         }
