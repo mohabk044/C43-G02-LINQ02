@@ -57,8 +57,13 @@ namespace Assignment
             //Console.WriteLine(Result);
             #endregion
             #region Q7. Get the length of the longest word in dictionary_english.txt (Read dictionary_english.txt into Array of String First).
+            //string[] Arr = File.ReadAllLines("dictionary_english.txt");
+            //var Result = Arr.Max(P => P.Length);
+            //Console.WriteLine(Result);
+            #endregion
+            #region Q8. Get the average length of the words in dictionary_english.txt (Read dictionary_english.txt into Array of String First).
             string[] Arr = File.ReadAllLines("dictionary_english.txt");
-            var Result = Arr.Max(P => P.Length);
+            var Result = Arr.Average(P => P.Length);
             Console.WriteLine(Result);
             #endregion
             #endregion
