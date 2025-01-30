@@ -141,7 +141,14 @@ namespace Assignment
             //}
             #endregion
             #region Q4. Create one sequence that contains the first letters of product names that are not also first letters of customer names.
-            var Result = ProductList.Select(P => P.ProductName[0]).Except(CustomerList.Select(C => C.CustomerName[0]));
+            //var Result = ProductList.Select(P => P.ProductName[0]).Except(CustomerList.Select(C => C.CustomerName[0]));
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q5. Create one sequence that contains the last Three Characters in each name of all customers and products, including any duplicates
+            var Result = ProductList.Select(P => P.ProductName.Substring(P.ProductName.Length - 3)).Concat(CustomerList.Select(C => C.CustomerName.Substring(C.CustomerName.Length - 3)));
             foreach (var item in Result)
             {
                 Console.WriteLine(item);
