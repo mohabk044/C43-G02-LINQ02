@@ -35,11 +35,16 @@ namespace Assignment
             //}
             #endregion
             #region Q3. Return a list of categories and how many products each has.
-            var Result = ProductList.Select(C => new { C.Category, ProductCount = C.ProductName.Count() });
-            foreach (var item in Result)
-            {
-                Console.WriteLine(item);
-            }
+            //var Result = ProductList.Select(C => new { C.Category, ProductCount = C.ProductName.Count() });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q4. Get the total of the numbers in an array.
+            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var Result = Arr.Sum();
+            Console.WriteLine(Result);
             #endregion
             #endregion
         }
