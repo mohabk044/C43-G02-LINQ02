@@ -109,7 +109,17 @@ namespace Assignment
             //}
             #endregion
             #region Q14. Get the average price of each category's products.
-            var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, AveragePrice = G.Average(P => P.UnitPrice) });
+            //var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, AveragePrice = G.Average(P => P.UnitPrice) });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #endregion
+
+            #region LINQ - Set Operators
+            #region Q1. Find the unique Category names from Product List
+            var Result = ProductList.Select(P => P.Category).Distinct();
             foreach (var item in Result)
             {
                 Console.WriteLine(item);
