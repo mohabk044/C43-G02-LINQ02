@@ -126,7 +126,15 @@ namespace Assignment
             //}
             #endregion
             #region Q2. Produce a Sequence containing the unique first letter from both product and customer names.
-            var Result = ProductList.Select(P => P.ProductName[0]).Union(CustomerList.Select(C => C.CustomerName[0]));
+            //var Result = ProductList.Select(P => P.ProductName[0]).Union(CustomerList.Select(C => C.CustomerName[0]));
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q3. Create one sequence that contains the common first letter from both product and customer names.
+            var Result = ProductList.Select(P => P.ProductName[0]).Concat(CustomerList.Select(C => C.CustomerName[0]));
+            Result = Result.Distinct();
             foreach (var item in Result)
             {
                 Console.WriteLine(item);
