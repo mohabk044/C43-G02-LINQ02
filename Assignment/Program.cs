@@ -15,8 +15,16 @@ namespace Assignment
             //Console.WriteLine(Result);
             #endregion
             #region Q3. Retrieve the second number greater than 5 
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var Result = Arr.Where(N => N > 5).ElementAt(1);
+            //Console.WriteLine(Result);
+            #endregion
+            #endregion
+
+            #region LINQ - Aggregate Operators
+            #region Q1. Uses Count to get the number of odd numbers in the array
             int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var Result = Arr.Where(N => N > 5).ElementAt(1);
+            var Result = Arr.Count(P => P % 2 != 0);
             Console.WriteLine(Result);
             #endregion
             #endregion
