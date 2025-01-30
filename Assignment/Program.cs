@@ -47,8 +47,13 @@ namespace Assignment
             //Console.WriteLine(Result);
             #endregion
             #region Q5. Get the total number of characters of all words in dictionary_english.txt (Read dictionary_english.txt into Array of String First).
+            //string[] Arr = File.ReadAllLines("dictionary_english.txt");
+            //var Result = Arr.Sum(P => P.Length);
+            //Console.WriteLine(Result);
+            #endregion
+            #region Q6. Get the length of the shortest word in dictionary_english.txt (Read dictionary_english.txt into Array of String First).
             string[] Arr = File.ReadAllLines("dictionary_english.txt");
-            var Result = Arr.Sum(P => P.Length);
+            var Result = Arr.Min(P => P.Length);
             Console.WriteLine(Result);
             #endregion
             #endregion
