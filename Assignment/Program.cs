@@ -74,8 +74,22 @@ namespace Assignment
             //}
             #endregion
             #region Q10. Get the cheapest price among each category's products
-            var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, CheapestPrice = G.Min(P => P.UnitPrice) });
-            foreach (var item in Result)
+            //var Result = ProductList.GroupBy(P => P.Category).Select(G => new { Category = G.Key, CheapestPrice = G.Min(P => P.UnitPrice) });
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region Q11. Get the products with the cheapest price in each category (Use Let)
+            var cheapestProducts = from p in ProductList
+                                   group p by p.Category into g
+                                   let cheapestPrice = g.Min(p => p.UnitPrice)
+                                   select new
+                                   {
+                                       Category = g.Key,
+                                       CheapestPrice = cheapestPrice
+                                   };
+            foreach (var item in cheapestProducts)
             {
                 Console.WriteLine(item);
             }
